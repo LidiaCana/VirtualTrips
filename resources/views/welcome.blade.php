@@ -9,7 +9,7 @@
             <div class="carousel-inner">
               <div class="carousel-item active">
                     <div class="bg-overlay"></div>
-                <img src="{{URL::to('/') }}/images/slider1.png" class="d-block w-100" alt="...">
+                {{-- <img src="{{URL::to('/') }}/images/slider1.png" class="d-block w-100" alt="..."> --}}
                 <div class="carousel-caption d-none d-md-block">
                   <h5>Mision</h5>
                   <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -17,7 +17,7 @@
               </div>
               <div class="carousel-item">
                     <div class="bg-overlay"></div>
-                <img src="{{URL::to('/') }}/images/slider1.png" class="d-block w-100" alt="...">
+                {{-- <img src="{{URL::to('/') }}/images/slider1.png" class="d-block w-100" alt="..."> --}}
                 <div class="carousel-caption d-none d-md-block">
                   <h5>Vision</h5>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -38,13 +38,12 @@
           <section id="trips">
           <div class="container text-center">
               <h2>Viajes</h2>
-              @foreach($data as $row)
+              
                 <div class="row">
                     <div class="card" style="width: 18rem;">
-                        <img src="{{ URL::to('/') }}/images/{{ $row->img }}" class="card-img-top" alt="...">
+                        {{-- <img src="{{ URL::to('/') }}/images/{{ $row->img }}" class="card-img-top" alt="..."> --}}
                     </div>                
                 </div>
-               @endforeach
           </div>
 
           {{--  --}}
