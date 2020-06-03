@@ -16,6 +16,7 @@ class Trips extends Migration
         Schema::create('trips', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('img');
             $table->text('description');
             $table->bigInteger('price');
             $table->bigInteger('user_id')->unsigned();
