@@ -6,7 +6,9 @@ use App\trips;
 
 Route::get('/', function () {
 
- return view('welcome');
+    $data = trips::latest()->paginate(5);
+    return view('welcome', compact('data'))
+    ->with('i', (request()->input('page', 1) - 1) * 5);
 });
 
 Auth::routes();
