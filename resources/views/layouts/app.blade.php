@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
     <style>
      .bg-overlay {
         position: absolute;
@@ -92,6 +93,6 @@
         <main class="py-4">
             @yield('content')
         </main>
-    </div>
+    </div>    
 </body>
 </html>

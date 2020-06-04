@@ -23,12 +23,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data = trips::latest()->paginate(5);
+        return view('admin/home', compact('data'))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
     }
     public function show(){
         
         $data = trips::latest()->paginate(5);
-        return view('welcome', compact('data'))
+        return view('admin/home', compact('data'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 }

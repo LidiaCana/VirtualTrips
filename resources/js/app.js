@@ -7,7 +7,9 @@ require("./bootstrap");
 window.Vue = require("vue");
 
 Vue.component("nav-basic", require("./components/NavBasic.vue").default);
-Vue.component("table-trip", require("./admin/TableBasic.vue").default);
+Vue.component("contact-form", require("./public/FormBasic.vue").default);
+Vue.component("card-picture", require("./public/CardPicture.vue").default);
+Vue.component("modal-picture", require("./public/ModalBasic.vue").default);
 const app = new Vue({
     el: "#app",
 });

@@ -16,7 +16,7 @@ class TripController extends Controller
     {
         
         $data = trips::latest()->paginate(5);
-        return view('index', compact('data'))
+        return view('admin/home', compact('data'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
          
     }
@@ -28,7 +28,7 @@ class TripController extends Controller
      */
     public function create()
     {   
-        return view('create');
+        return view('admin/create');
     }
 
     /**
@@ -68,9 +68,9 @@ class TripController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        $data = trip::findOrFail($id);
-        return view('view', compact('data'));
+    {   
+        $data = trips::findOrFail($id);
+        return view('admin/show', compact('data'));
     }
 
     /**
@@ -80,9 +80,9 @@ class TripController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        $data = trip::findOrFail($id);
-        return view('edit', compact('data'));
+    {   
+        $data = trips::findOrFail($id);
+        return view('admin/edit', compact('data'));
     }
 
     /**
@@ -120,7 +120,6 @@ class TripController extends Controller
         $trip->name = $request->name;
         $trip->description = $request->description;
         $trip->price = $request->price;
-        $trip->guide_id = $request->guide_id;
         $trip->user_id = auth()->id();
         $trip->save();
     
@@ -134,7 +133,7 @@ class TripController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
+    {   
         $trip = trips::find($id);
         $trip->delete();
         return redirect('trips')->with('success', 'Data is successfully deleted');
